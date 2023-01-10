@@ -2,7 +2,7 @@
 
 Bypass Snapchat SSL pinning on Android devices.  
 Supported ABIs: `armeabi-v7a`, `arm64-v8a`  
-Latest version: `v12.08.0.29`
+Latest version: `v12.16.0.28`
 
 If you like this project:  
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/eltimusa4q)
@@ -10,7 +10,7 @@ If you like this project:
 ## Patched APK (No Root)
 
 Download the latest patched APK: 
-+ [snapchat-v12.08.0.29.apk](https://github.com/Eltion/Snapchat-SSL-Pinning-Bypass/releases/download/v12.08.0.29/snapchat-v12.08.0.29.apk)
++ [snapchat-v12.16.0.28.apk](https://github.com/Eltion/Snapchat-SSL-Pinning-Bypass/releases/download/v12.16.0.28/snapchat-v12.16.0.28.apk)
 
 [See all versions](https://github.com/Eltion/Snapchat-SSL-Pinning-Bypass/releases/)
 
