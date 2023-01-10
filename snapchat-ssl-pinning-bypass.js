@@ -1,5 +1,24 @@
 const pattern_arm64 = 'fd 7b ba a9 fc 6f 01 a9 fa 67 02 a9 f8 5f 03 a9 f6 57 04 a9 f4 4f 05 a9 fd 03 00 91 ff 43 0e d1 53';
-const pattern_arm = '2d e9 f0 4f ad f5 0b 7d 1c 91 82 46';
+const pattern_arm = '2d e9 f0 4f ad f5 0b 7d 81 46 b5 48';
+
+//Only needed when apk is patched with frida-gadget
+//spoofSigniature() 
+
+function spoofSigniature() {
+    const originalSignature = "<ORIGINAL_APK_SIGNATURE>" //This will be set by patch_apk.py
+    Java.perform(() => {
+        const PackageManager = Java.use("android.app.ApplicationPackageManager");
+        const Signature = Java.use("android.content.pm.Signature");
+        PackageManager.getPackageInfo.overload('java.lang.String', 'int').implementation = function (a, b) {
+            const packageInfo = this.getPackageInfo(a, b);
+            if (a == "com.snapchat.android" && b == 64) {
+                const signature = Signature.$new(originalSignature);
+                packageInfo.signatures.value = Java.array('android.content.pm.Signature', [signature]);
+            }
+            return packageInfo;
+        }
+    });
+}
 
 
 function hook_PKPState_CheckPublicKeyPins_by_pattern(library, pattern) {
@@ -25,7 +44,8 @@ function hook_PKPState_CheckPublicKeyPins_by_offset(library, offset) {
 
 function hook_PKPState_CheckPublicKeyPins_by_address(address) {
     try {
-        Interceptor.attach(address, {
+        const thumb = Process.arch == "arm" ? 1 : 0
+        Interceptor.attach(address.add(thumb), {
             onLeave: function (retvalue) {
                 retvalue.replace(1);
             }
