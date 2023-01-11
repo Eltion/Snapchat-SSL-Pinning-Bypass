@@ -11,6 +11,7 @@ If you like this project:
 
 Download the latest patched APK: 
 + [snapchat-v12.16.0.28.apk](https://github.com/Eltion/Snapchat-SSL-Pinning-Bypass/releases/download/v12.16.0.28/snapchat-v12.16.0.28.apk)
++ [snapchat-v12.16.0.28-nox.apk](https://github.com/Eltion/Snapchat-SSL-Pinning-Bypass/releases/download/v12.16.0.28/snapchat-v12.16.0.28-nox.apk) (Nox Emulator)
 
 [See all versions](https://github.com/Eltion/Snapchat-SSL-Pinning-Bypass/releases/)
 
