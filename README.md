@@ -52,7 +52,7 @@ After that an patched apk file should be generated.
 
 ## Intercept network traffic
 
-You can use a tool like mitmproxy or Burp Suite to intercept the network.
+You can use a tool like mitmproxy to intercept the network.
 
 1. Install patched APK in the device
 2. Install [mitmproxy](https://mitmproxy.org/)
