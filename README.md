@@ -55,7 +55,7 @@ After that an patched apk file should be generated.
 You can use a tool like mitmproxy or Burp Suite to intercept the network.
 
 1. Install patched APK in the device
-2. Install [mitmproxy](https://mitmproxy.org/) or [Burp Suite](https://portswigger.net/burp)
+2. Install [mitmproxy](https://mitmproxy.org/)
 3. Set up proxy for wifi settings or run: `adb shell settings put global http_proxy <proxy>`
 
 Now you should be able to see the network traffic.
