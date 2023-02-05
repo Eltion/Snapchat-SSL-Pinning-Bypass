@@ -2,9 +2,9 @@ const pattern_arm64 = 'fd 7b ba a9 fc 6f 01 a9 fa 67 02 a9 f8 5f 03 a9 f6 57 04 
 const pattern_arm = '2d e9 f0 4f ad f5 0b 7d 81 46 b5 48';
 
 //Only needed when apk is patched with frida-gadget
-//spoofSigniature() 
+//spoofSignature() 
 
-function spoofSigniature() {
+function spoofSignature() {
     const originalSignature = "<ORIGINAL_APK_SIGNATURE>" //This will be set by patch_apk.py
     Java.perform(() => {
         const PackageManager = Java.use("android.app.ApplicationPackageManager");
